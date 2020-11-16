@@ -11,7 +11,7 @@
     <h1>Blog</h1>
     <p>Nick Was written 3 blogs</p>
     {% for Blog in Blogs %}
-    <a href="{% url 'detail' Blog.id %}"><h2>{{Blog.title}}</h2></a>
+    <a href="{% url 'Blog:detail' Blog.id %}"><h2>{{Blog.title}}</h2></a>
     
     <h5>{{Blog.date}}</h5>
     <p>{{Blog.description}}</p>

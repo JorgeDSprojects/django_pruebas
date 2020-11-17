@@ -9,12 +9,13 @@
 
 <body>
     <h1>Blog</h1>
-    <p>Nick Was written 3 blogs</p>
+    <h2>Nick Was written {{Blogs.count}} blog{{Blogs.count|pluralize}}</h2>
+    
     {% for Blog in Blogs %}
     <a href="{% url 'Blog:detail' Blog.id %}"><h2>{{Blog.title}}</h2></a>
     
-    <h5>{{Blog.date}}</h5>
-    <p>{{Blog.description}}</p>
+    <h5>{{Blog.date|date:'M d Y'}}</h5>
+    <p>{{Blog.description|safe|truncatechars:100}}</p>
     {% endfor %}
 
 
